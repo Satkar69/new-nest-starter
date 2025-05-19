@@ -1,0 +1,36 @@
+export abstract class IRedisService {
+  abstract get(key: string): Promise<string | null>;
+  abstract set(key: string, value: string): Promise<boolean>;
+  abstract del(key: string): Promise<number>;
+  abstract keys(pattern: string): Promise<string[]>;
+  // abstract flushall(): Promise<boolean>;
+  abstract expire(key: string, seconds: number): Promise<boolean>;
+  // abstract ttl(key: string): Promise<number>;
+  abstract setex(key: string, seconds: number, value: string): Promise<boolean>;
+  // abstract setnx(key: string, value: string): Promise<boolean>;
+  // abstract incr(key: string): Promise<number>;
+  // abstract decr(key: string): Promise<number>;
+  abstract hget(key: string, field: string): Promise<string | null>;
+  abstract hset(key: string, value: any): Promise<number>;
+  abstract hmset(key: string, data: { [key: string]: any }): Promise<boolean>;
+  abstract hkeys(key: string): Promise<string[]>;
+  // abstract hvals(key: string): Promise<string[]>;
+  abstract hgetall(key: string): Promise<{ [key: string]: string }>;
+  // abstract hlen(key: string): Promise<number>;
+  // abstract hsetnx(key: string, field: string, value: string): Promise<boolean>;
+  abstract hincrby(key: string, field: string, increment: number): Promise<number>;
+  abstract hincrbyfloat(key: string, field: string, increment: number): Promise<number>;
+  // abstract hexists(key: string, field: string): Promise<boolean>;
+  // abstract hdel(key: string, field: string): Promise<boolean>;
+  // abstract hstrlen(key: string, field: string): Promise<number>;
+  // abstract lpush(key: string, value: string): Promise<number>;
+  // abstract rpush(key: string, value: string): Promise<number>;
+  // abstract lpop(key: string): Promise<string | null>;
+  // abstract rpop(key: string): Promise<string | null>;
+  // abstract lrange(key: string, start: number, stop: number): Promise<string[]>;
+  // abstract lindex(key: string, index: number): Promise<string | null>;
+  // abstract lrem(key: string, count: number, value: string): Promise<number>;
+  // abstract llen(key: string): Promise<number>;
+  // abstract lset(key: string, index: number, value: string): Promise<boolean>;
+  // abstract ltrim(key: string, start: number, stop: number): Promise<boolean>;
+}
