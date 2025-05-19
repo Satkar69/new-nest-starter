@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   postgres:
     image: postgres:15
@@ -34,6 +32,6 @@ services:
     volumes:
       - test-redis-insight:/data
 volumes:
-  roc-redis-insight:
-  roc-postgres-data:
-  roc-redis-data:
+  test-redis-insight:
+  test-postgres-data:
+  test-redis-data:
